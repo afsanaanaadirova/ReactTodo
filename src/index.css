@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: linear-gradient(
+    269.38deg,
+    rgba(172, 0, 253, 0.58) 20.07%,
+    rgba(0, 248, 233, 0.58) 82.18%
+  );
+  color: white;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+}
+header {
+  font-size: 2rem;
+}
+
+header,
+form {
+  position: relative;
+  min-height: 20vh;
+  width: fit-content;
+  margin: 0 auto;
+}
+form input {
+  padding: 0.5rem;
+  padding-left: 10px;
+  font-size: 2rem;
+  border: none;
+  background: white;
+}
+
+.todo {
+  margin: 0.5rem;
+  background: white;
+  font-size: 1.5rem;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 1s ease;
+}
+
+.Form-Input input {
+  background: #ffffff;
+  border-radius: 10px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #cecece;
+}
+.Form-Input .Input-Add {
+  width: 576px;
+  height: 68px;
+}
+.Input-check {
+  color: #00d1ff;
+}
+.Form-Input input:focus-visible {
+  outline: none !important;
+}
+.Form-Input {
+  max-width: 576px;
+  margin: 0 auto;
+}
+.Form-Input .Add-Btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 29.4px;
+  height: 29.4px;
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  border-radius: 6px;
+  padding: 0.5rem;
+  font-size: 2rem;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #00a3ff;
+}
+.Form-Input .Add-Btn:hover {
+  background: #ffffff;
+  color: #00a3ff;
+}
+.Form-Input svg {
+  font-size: 20px;
+}
+.todo-list {
+  min-width: 30%;
+  max-width: 576px;
+  margin: 0 auto;
+  list-style: none;
+  background: #ffffff;
+  border-radius: 10px 10px 0 0;
+  border: 1px;
+  color: #000;
+}
+.todo-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e3e0e0;
+  padding: 22px;
+}
+.todo-list li span {
+  display: flex;
+  align-items: center;
+}
+.todo-list li span svg {
+  margin-right: 10px;
+}
+.trash {
+  color: #ff002f;
+}
+.todo-list li svg {
+  cursor: pointer;
+}
+.footer {
+  width: 576px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  background: #ffffff;
+  border-radius: 0px 0px 10px 10px;
+}
+.footer button {
+  padding: 0.5rem;
+  border: none;
+  cursor: pointer;
+  background: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  color: #858585;
+}
+.footer span {
+  padding: 0.5rem;
+  border: none;
+  cursor: pointer;
+  background: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  color: #858585;
+}
