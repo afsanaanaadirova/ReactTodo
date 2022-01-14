@@ -4,11 +4,7 @@
   box-sizing: border-box;
 }
 body {
-  background: linear-gradient(
-    269.38deg,
-    rgba(172, 0, 253, 0.58) 20.07%,
-    rgba(0, 248, 233, 0.58) 82.18%
-  );
+  background: #e5e5e5;
   color: white;
   font-family: "Poppins", sans-serif;
   min-height: 100vh;
@@ -26,7 +22,7 @@ form {
 }
 form input {
   padding: 0.5rem;
-  padding-left: 10px;
+  padding-left: 44px;
   font-size: 2rem;
   border: none;
   background: white;
@@ -50,7 +46,7 @@ form input {
   font-weight: normal;
   font-size: 16px;
   line-height: 19px;
-  color: #cecece;
+  color: #000;
 }
 .Form-Input .Input-Add {
   width: 576px;
@@ -64,6 +60,7 @@ form input {
 }
 .Form-Input {
   max-width: 576px;
+  padding-top: 70px;
   margin: 0 auto;
 }
 .Form-Input .Add-Btn {
@@ -128,6 +125,7 @@ form input {
   justify-content: space-between;
   background: #ffffff;
   border-radius: 0px 0px 10px 10px;
+  padding: 12px;
 }
 .footer button {
   padding: 0.5rem;
@@ -150,4 +148,17 @@ form input {
   font-size: 12px;
   line-height: 14px;
   color: #858585;
+}
+.container {
+  position: relative;
+}
+.container::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 296px;
+  background-repeat: no-repeat;
+  background: url(../images/bg.png);
+  background-size: cover;
 }

@@ -1,13 +1,12 @@
 import React from "react";
-import { FaTrash, FaRegCircle } from "react-icons/fa";
+import { FaRegCircle } from "react-icons/fa";
 
-function Todo({ text, deleteOnbyONe }) {
+function Todo({ text }) {
   return (
     <li>
       <span>
         <FaRegCircle className="Input-check" /> {text}
       </span>
-      <FaTrash onClick={deleteOnbyONe} className="trash" />
     </li>
   );
 }

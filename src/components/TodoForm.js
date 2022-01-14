@@ -5,7 +5,7 @@ function TodoForm({
   inputText,
   setInputText,
   todo,
-  settodos,
+  setTodos,
   count,
   setCount,
 }) {
@@ -19,8 +19,8 @@ function TodoForm({
     if (!inputText) {
       alert("Please add todo");
     } else {
-      settodos([...todo, { text: inputText }]);
-      setCount(count + 1);
+      setTodos([...todo, { text: inputText }]);
+      console.log(todo.leght);
       setInputText("");
     }
   };

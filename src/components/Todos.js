@@ -3,47 +3,30 @@ import TodoForm from "./TodoForm";
 import Todo from "./Todo";
 
 function Todos() {
-  const [todo, settodos] = useState([]);
+  const [todo, setTodos] = useState([]);
   const [inputText, setInputText] = useState("");
-  const [count, setCount] = useState(0);
 
   //delete all todos,empty counter
   const handlerDelete = () => {
-    const newTodo = [...todo];
-    var filtered = newTodo.filter(function (value) {
-      return value > 0;
-    });
-    settodos(filtered);
-    setCount(0);
+    setTodos([]);
   };
-  const deleteOnbyONe = (index) => {
-    const newTodo = [...todo];
-    newTodo.splice(index, 1);
-    settodos(newTodo);
-    setCount(count - 1);
-  };
+
   return (
     <div>
       <TodoForm
         todo={todo}
-        settodos={settodos}
+        setTodos={setTodos}
         inputText={inputText}
         setInputText={setInputText}
-        count={count}
-        setCount={setCount}
       />
       <ul className="todo-list">
         {todo &&
           todo.map((element, index) => (
-            <Todo
-              key={index}
-              text={element.text}
-              deleteOnbyONe={deleteOnbyONe}
-            />
+            <Todo key={index} text={element.text} />
           ))}
       </ul>
       <div className="footer">
-        <span>Ümumi {count} tapşırıq</span>
+        <span>Ümumi {todo.length} tapşırıq</span>
         <button onClick={handlerDelete}>Hamısını sil</button>
       </div>
     </div>

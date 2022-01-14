@@ -1,9 +1,9 @@
-import Todos from "./components/Todos";
+import Result from "./container/result";
 
 function App() {
   return (
     <div className="container">
-      <Todos />
+      <Result />
     </div>
   );
 }
