@@ -5,12 +5,13 @@ import Todo from "./Todo";
 function Todos() {
   const [todo, setTodos] = useState([]);
   const [inputText, setInputText] = useState("");
+  const [count, setCount] = useState(0);
 
-  //delete all todos,empty counter
+  //delete all todos
   const handlerDelete = () => {
     setTodos([]);
+    setCount(0);
   };
-
   return (
     <div>
       <TodoForm
@@ -22,11 +23,23 @@ function Todos() {
       <ul className="todo-list">
         {todo &&
           todo.map((element, index) => (
-            <Todo key={index} text={element.text} />
+            <Todo
+              key={index}
+              text={element.text}
+              id={element.id}
+              count={count}
+              setCount={setCount}
+              completed={element.completed}
+              todo={todo}
+              setTodos={setTodos}
+            />
           ))}
       </ul>
       <div className="footer">
-        <span>Ümumi {todo.length} tapşırıq</span>
+        <span>
+          <span>Ümumi {todo.length} tapşırıq</span>
+          <span>Hazır: {count} tapşırıq</span>
+        </span>
         <button onClick={handlerDelete}>Hamısını sil</button>
       </div>
     </div>

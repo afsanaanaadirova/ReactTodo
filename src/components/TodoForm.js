@@ -1,14 +1,7 @@
 import React from "react";
 import { FaPlus } from "react-icons/fa";
 
-function TodoForm({
-  inputText,
-  setInputText,
-  todo,
-  setTodos,
-  count,
-  setCount,
-}) {
+function TodoForm({ inputText, setInputText, todo, setTodos }) {
   // put imput changes value
   const handlerChanges = (e) => {
     setInputText(e.target.value);
@@ -19,8 +12,10 @@ function TodoForm({
     if (!inputText) {
       alert("Please add todo");
     } else {
-      setTodos([...todo, { text: inputText }]);
-      console.log(todo.leght);
+      setTodos([
+        ...todo,
+        { text: inputText, completed: false, id: Math.random() * 1000 },
+      ]);
       setInputText("");
     }
   };

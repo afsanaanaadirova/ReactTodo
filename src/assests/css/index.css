@@ -54,6 +54,8 @@ form input {
 }
 .Input-check {
   color: #00d1ff;
+  width: 24px;
+  height: 24px;
 }
 .Form-Input input:focus-visible {
   outline: none !important;
@@ -104,6 +106,16 @@ form input {
   align-items: center;
   border-bottom: 1px solid #e3e0e0;
   padding: 22px;
+  cursor: pointer;
+}
+.todo-list li .trash-icon {
+  display: none;
+  color: #ff002f;
+  transition: 0.3s all;
+}
+.todo-list li:hover .trash-icon {
+  display: block;
+  transition: 0.3s all;
 }
 .todo-list li span {
   display: flex;
@@ -111,9 +123,6 @@ form input {
 }
 .todo-list li span svg {
   margin-right: 10px;
-}
-.trash {
-  color: #ff002f;
 }
 .todo-list li svg {
   cursor: pointer;
@@ -161,4 +170,55 @@ form input {
   background-repeat: no-repeat;
   background: url(../images/bg.png);
   background-size: cover;
+}
+
+.checkbox:not(last-of-type) {
+  display: inline-block;
+  margin-right: 40px;
+}
+.checkbox label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  background-color: #fff;
+  border: 1px solid #00d1ff;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 300ms ease, colour 300ms ease,
+    box-shadow 300ms ease;
+}
+.completed .checkbox label:after {
+  content: "";
+  position: absolute;
+  top: 28%;
+  left: 23%;
+  width: 53%;
+  height: 25%;
+  border-left: 2px solid #ffff;
+  border-bottom: 2px solid #ffff;
+  transform: rotate(-45deg);
+  transition: opacity 300ms ease;
+}
+.checkbox input {
+  visibility: hidden;
+}
+.completed label {
+  background: #00d1ff;
+}
+.completed .checkbox input:checked + label {
+  background: #00d1ff;
+  border-color: #00d1ff;
+  box-shadow: 0 5px 7px 0 rgba(0, 0, 0, 0.4);
+}
+.completed .checkbox input:checked + label:after {
+  opacity: 1;
+}
+.checkbox {
+  position: relative;
+}
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
 }
