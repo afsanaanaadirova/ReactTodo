@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FaRegTrashAlt } from "react-icons/fa";
 
-function Todo({ text, todo, setTodos, completed, id, setCount, count }) {
+function Todo({ text, todo, setTodos, completed, id }) {
   const [number, setNumber] = useState(0);
 
   useEffect((e) => {
@@ -9,9 +9,6 @@ function Todo({ text, todo, setTodos, completed, id, setCount, count }) {
   }, []);
 
   const handlerDeleteOneByeOne = () => {
-    setCount((count) =>
-      todo.find((el) => el.id === id).completed ? count - 1 : count
-    );
     setTodos(todo.filter((element) => element.id !== id));
   };
   //complete todo
@@ -19,11 +16,6 @@ function Todo({ text, todo, setTodos, completed, id, setCount, count }) {
     setTodos(
       todo.map((item) => {
         if (item.id === id) {
-          if (!item.completed) {
-            setCount(count + 1);
-          } else {
-            setCount(count - 1);
-          }
           return {
             ...item,
             completed: !item.completed,
@@ -34,17 +26,23 @@ function Todo({ text, todo, setTodos, completed, id, setCount, count }) {
       })
     );
   };
+
   return (
-    <li className={`todo-item ${completed ? "completed" : ""}`}>
-      <span>
-        <div className="checkbox">
-          <input type="checkbox" name="" id={number} />
-          <label htmlFor={number} onClick={completeHandler}></label>
-        </div>
-        {text}
-      </span>
-      <FaRegTrashAlt className="trash-icon" onClick={handlerDeleteOneByeOne} />
-    </li>
+    <div>
+      <li className={`todo-item ${completed ? "completed" : ""}`}>
+        <span>
+          <div className="checkbox">
+            <input type="checkbox" name="" id={number} />
+            <label htmlFor={number} onClick={completeHandler}></label>
+          </div>
+          {text}
+        </span>
+        <FaRegTrashAlt
+          className="trash-icon"
+          onClick={handlerDeleteOneByeOne}
+        />
+      </li>
+    </div>
   );
 }
 

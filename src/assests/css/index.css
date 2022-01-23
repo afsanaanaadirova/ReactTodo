@@ -16,7 +16,7 @@ header {
 header,
 form {
   position: relative;
-  min-height: 20vh;
+  min-height: 14vh;
   width: fit-content;
   margin: 0 auto;
 }
@@ -221,4 +221,20 @@ form input {
 .completed {
   text-decoration: line-through;
   opacity: 0.5;
+}
+.emptyTodo {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 60px;
+  padding-bottom: 38px;
+}
+.emptyTodo p {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: #858585;
+  padding-top: 20px;
 }
