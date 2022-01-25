@@ -16,9 +16,9 @@ header {
 header,
 form {
   position: relative;
-  min-height: 14vh;
   width: fit-content;
   margin: 0 auto;
+  margin-bottom: 10px;
 }
 form input {
   padding: 0.5rem;
